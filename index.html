@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w2.org/1999/xhtml">
+<script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><html lang="en">
+    <head>
+	<meta name="generator" content="Hugo 0.127.0">
+            <meta charset="utf-8" />
+    <title>Mehdi AIT HAMMA Portfolio </title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mehdi AIT HAMMA Portfolio">
+    <meta property="og:title" content="Mehdi AIT HAMMA Portfolio" />
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="http://localhost:1313/" />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href=""/>
+    <link rel="canonical" href="http://localhost:1313/" />    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.terminal/2.42.0/js/jquery.terminal.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.terminal/js/less.min.js"></script>
+    <script src="https://unpkg.com/jquery.terminal/js/autocomplete_menu.js"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.terminal/2.42.0/css/jquery.terminal.min.css" rel="stylesheet"/>
+
+    <style>
+        body {
+            width: 100%;
+            font-size: 18px;
+        }
+    </style>
+    
+
+    </head>
+        <body>
+        
+<script> 
+jQuery(document).ready(function($) {
+    var animation = false;
+
+    var commands = {
+        help: "shows help",
+        less: "Use less as output method",
+        whois: "list basic details",
+        social: "list social networks",
+        work: "list work experience",
+        education: "list education",
+        skills: "list core skills",
+        languages: "list spoken languages",
+        projects: "list projects",
+        
+        
+        
+        
+            source: "shows details about template powering this website",
+        
+        
+        
+            exit: "exit the terminal",
+        
+        all: "Show all details",
+    };
+
+    function progressBar(number) {
+        var barLength = Math.round(number / 10);
+        var barFilled = Array(barLength + 1).join("&#9611;");
+        var barBlank= Array(11 - barLength).join("&#9617;");
+
+        return barFilled + barBlank
+    }
+
+    
+    function padKey(key, length) {
+        return key + ' '.repeat(length - key.length);
+    }
+
+    function commandsHelp() {
+        let longestKeyLength = Math.max(...Object.keys(commands).map(key => key.length));
+
+        let helpText = ""
+        for (let key in commands) {
+            if (commands.hasOwnProperty(key)) {
+                helpText += ` ${padKey(key, longestKeyLength)}\t${commands[key]}\n`
+            }
+        }
+        return helpText
+    }
+
+    var help = '\n[[b;white;]usage:]\n' +
+                '\n <command> - execute the command\n' +
+                ' less <command> - use less to display the output\n\n' +
+                '\n[[b;white;]Available commands:]\n' + 
+               commandsHelp();
+
+    var whois = [
+     
+        '[[b;grey;]Name:]\t\t\tMehdi AIT HAMMA\n' +
+        
+        '[[b;grey;]Location:]\t\tFrance\n' +
+        
+        '[[b;grey;]Email:]\t\t\taithamma@et.esiea.fr\n' +
+        
+        
+        '[[b;grey;]Homepage:]\t\thttps:\/\/mehdiiah.github.io\/\n' +
+        
+        
+        '4th year student at ESIEA Graduate School of Engineering and in apprenticeship at BPCE-IT\n' +
+        
+        '\r',
+    
+    ];
+
+    function social() { 
+        var hideName = false;
+        let sMap = { 
+             
+                
+                "github": "https:\/\/github.com\/MehdiiAH",
+                
+                "linkedin": "https:\/\/www.linkedin.com\/in\/mehdi-aithamma",
+                
+            
+        };
+
+        
+        socialText = []
+        for (let key in sMap) {
+            if (sMap.hasOwnProperty(key)) {
+                if (hideName) {
+                    socialText.push(sMap[key]);
+                } else { 
+                    let longestKeyLength = Math.max(...Object.keys(sMap).map(key => key.length));
+                    socialText.push(`${padKey(key, longestKeyLength)}\t${sMap[key]}`)
+                };
+            }
+        }
+
+        return socialText
+    }
+
+    var certifications = [
+    
+    ];
+    
+    var work = [
+    
+        
+            '---\n' +
+            '[[b;purple;]Machine Learning \u0026 Sofware Developer Apprentice]\n' +
+            'BPCE-IT\n' +
+            'Charenton-le-Pont, France\n' +
+            'August 2023 - Present\n' +
+            '\n' +
+            '• Developed and implemented a machine learning model with Prophet to predict disk saturation in database servers, \n  significantly enhancing predictive maintenance capabilities of the database administration teams.\n• Contributed to a front-end and back-end application using Flask, Angular and MongoDB\n  which streamlined database administration processes.\n' +
+            '\r',
+        
+            '---\n' +
+            '[[b;purple;]Software Developer Intern]\n' +
+            'BPCE-IT\n' +
+            'Charenton-le-Pont, France\n' +
+            'April 2022  - June 2022\n' +
+            '\n' +
+            '• Participated in the migration of the security team\u0027s website platform from PHP to Angular, \n  improving the responsiveness of the interface and the user experience.\n' +
+            '\r',
+        
+    
+    ];
+
+    var education = [
+    
+        
+            '---\n' +
+            '[[b;blue;]ESIEA Graduate School of Engineering, Paris]\n' +
+            '2022 – 2025\n' +
+            
+                "Enrolled in the Artificial Intelligence \u0026 Data Science specialization at ESIEA, \na 5-year, top-ranked engineering school specialized in Digital Sciences and Technologies, \ncomplemented by participation in an Apprenticeship \u0026 Study program at BPCE-IT. \nThe school delivers an engineering degree equivalent to a Master of Science.\n\n" +
+            
+            "\r",
+        
+            '---\n' +
+            '[[b;blue;]Two-year university degree in technology in Computer Science]\n' +
+            '2020 - 2022\n' +
+            
+                "University institute of technology (IUT) of Montreuil\n" +
+            
+            "\r",
+        
+            '---\n' +
+            '[[b;blue;]Bachelor of Science in Biology]\n' +
+            '2019 – 2020\n' +
+            
+                "University of Évry - Paris-Saclay University\n" +
+            
+            "\r",
+        
+    
+    ];
+
+    var projects = [
+    
+        
+            '---\n' +
+            '[[b;red;]Command-Line Style Portfolio]\n' +
+            '06\/2024\n' +
+            
+            'https:\/\/mehdiiah.github.io\/\n' +
+            
+            
+            'Technology : Hugo\nDeveloped a personal portfolio website using Hugo with a terminal-style interface. \nUsers interact with the site by typing commands to navigate through sections, \nengaging user experience reminiscent of a command-line environment.\n\n' +
+            
+            "\r",
+      
+            '---\n' +
+            '[[b;red;]Robotics Project (Poppy), University Project]\n' +
+            '03\/2023 – 06\/2023\n' +
+            
+            '\n' +
+            
+            
+            'Technology : Python, OpenCV, CoppeliaSim, Raspberry Pi\nEnhanced an open-source robotics project, Poppy, as part of a PST project at ESIEA’s DTRE club. \nImplemented object recognition using OpenCV and programmed movement behaviors in Python. \nUtilized CoppeliaSim for simulation and integrated a Raspberry Pi to manage real-time robotic operations.\n\n' +
+            
+            "\r",
+      
+            '---\n' +
+            '[[b;red;]PokéViewer Mobile App]\n' +
+            '05\/2023 – 06\/2023\n' +
+            
+            'https:\/\/github.com\/MehdiiAH\/DevMobilePokemon\n' +
+            
+            
+            'Technology : Cordova, Vue\nDeveloped a mobile application using Cordova that interfaces with the PokeAPI to display a list of Pokémon. \nThe app features functionality for navigating through Pokémon lists, viewing detailed descriptions, and managing data persistence. \nAdditional interactive elements include audio playback upon user interaction and device vibration for specific Pokémon actions.\n\n' +
+            
+            "\r",
+      
+            '---\n' +
+            '[[b;red;]Deep Learning Pokedex]\n' +
+            '01\/2022 - 03\/2022\n' +
+            
+            'https:\/\/github.com\/MehdiiAH\/Pokedex\n' +
+            
+            
+            'Technology : Python, TensorFlow, Keras\nDeveloped a Pokedex using TensorFlow and Keras, leveraging the ResNet50 architecture for deep learning-based image classification. \nUsers can upload images of Pokémon, and the system accurately identifies and names the Pokémon.\n\n' +
+            
+            "\r",
+      
+            '---\n' +
+            '[[b;red;]Recettuto]\n' +
+            '11\/2021 – 01\/2022\n' +
+            
+            'https:\/\/github.com\/MehdiiAH\/Recettuto\n' +
+            
+            
+            'Technology : PHP, AJAX, Bootstrap, MySQL\nWorked in a team of three to develop \u0022Recettuto\u0022 a cooking website from scratch. \nResponsibilities included designing the MySQL database and implementing the site using PHP, AJAX, \nand Bootstrap to ensure a responsive and user-friendly interface for sharing and discovering recipes.\n\n' +
+            
+            "\r",
+      
+            '---\n' +
+            '[[b;red;]Zombie Apocalypse]\n' +
+            '04\/2021 - 06\/2021\n' +
+            
+            '\n' +
+            
+            
+            'Technology : Java, JavaFX\nCollaborated in a team of three to create a top-down, Zelda-like game called Zombie Apocalypse. \nUtilized object-oriented programming in Java and JavaFX to build an interactive world \nwhere players battle enemies and solve puzzles.\n\n' +
+            
+            "\r",
+      
+    
+    ];
+
+    var skills = [
+    
+        
+            '[[b;green;]Software Development:]\n' +
+            
+            
+            'Python, C, Java, JavaFX, R, Git, Unix\n' +
+            
+            '\r',
+        
+            '[[b;green;]Back-end Web:]\n' +
+            
+            
+            'Flask, PHP, PostgreSQL, MySQL, MongoDB\n' +
+            
+            '\r',
+        
+            '[[b;green;]Front-end Web:]\n' +
+            
+            
+            'HTML, CSS, Javascript\/Typescript, Angular, Vue, Hugo\n' +
+            
+            '\r',
+        
+            '[[b;green;]Machine Learning:]\n' +
+            
+            
+            'TensorFlow, Keras, OpenCV, Prophet\n' +
+            
+            '\r',
+        
+    
+    ];
+  
+    var languages = [
+    
+        
+            '[[b;grey;]French:]\n' +
+            
+            
+            'Native\n' +
+            
+            '\r',
+        
+            '[[b;grey;]English:]\n' +
+            
+            
+            'Professioonal working profiency (TOEIC 950\/990)\n' +
+            
+            '\r',
+        
+    
+    ];
+
+    var misc = [
+         
+    ];
+
+    var source =  '        _______            \n' +
+                  '       |       |           \n' +
+                  '       |       |           \n' +
+                  '       |_______|_______    \n' +
+                  '               |       |   \n' +
+                  '               |       |   \n' +
+                  ' ______________|_______|   \n' +
+                  '|      |       |       |   \n' +
+                  '|      |       |       |   \n' +
+                  '|______|_______|_______|   \n' +
+                  '[[;red;]May the source be with you]\n';
+
+    var all = [ 
+        whois,
+        social(),
+        work,
+        education,
+        skills,
+        languages,
+        projects,
+        certifications,
+        misc,
+        
+        
+    ]
+
+    $('body').terminal(function(command, term) {
+
+        var useLess = false;
+        
+
+        function echoArray(array) {
+            if (useLess) {
+                term.less(array);
+            } else {
+                for (i = 0; i < array.length; i += 1) {
+                    term.echo(array[i]);
+                }
+            }
+        }
+        
+        function progress(percent, width) {
+            var size = Math.round(width*percent/100);
+            var left = '', taken = '', i;
+            for (i=size; i--;) {
+                taken += '=';
+            }
+            if (taken.length > 0) {
+                taken = taken.replace(/=$/, '>');
+            }
+            for (i=width-size; i--;) {
+                left += ' ';
+            }
+            return '[' + taken + left + '] ' + percent + '%';
+        }
+
+        function loading () {
+            var i = 0, size = 30;
+            prompt = term.get_prompt();
+            string = progress(0, size);
+            term.set_prompt(progress);
+            animation = true;
+            (function loop() {
+                string = progress(i++, size);
+                term.set_prompt(string);
+                if (i < 100) {
+                    timer = setTimeout(loop, 10);
+                } else {
+                    term.echo(progress(i, size) + ' [[b;green;]OK]').set_prompt(prompt);
+                    animation = false
+                }
+            })();
+        }
+
+        commands = command.split(/[ ]+/);
+        if (commands[0] == 'less') {
+            useLess = true;
+            commands.shift();
+        } 
+                    
+        switch(commands[0]) {
+            case 'whois':
+                
+                echoArray(whois);
+                break;
+            case 'social':
+                
+                echoArray(social());
+                break;
+            case 'work':
+                
+                echoArray(work);
+                break;
+            case 'education':
+                
+                echoArray(education);
+                break;
+            case 'skills':
+                
+                echoArray(skills);
+                break;
+            case 'languages':
+                
+                echoArray(languages);
+                break;
+            case 'projects':
+                
+                echoArray(projects);
+                break;
+            case 'certifications':
+                
+                term.echo(certifications);
+                break;
+            case 'misc':
+                
+                echoArray(misc);
+                break;
+            case 'help':
+            case '?':
+                term.echo(help);
+                break;
+            case 'all':
+                
+                echoArray(all.flat(1));
+                break;
+            
+            case ':(){:|:&};:':
+                term.echo("nice try");
+                break;
+            case 'source':
+                
+                term.echo(source);
+                break;
+            
+            case 'exit':
+                term.echo("terminating ... ")
+                loading();
+                setTimeout(function(){window.location = 'about:blank'}, 2000);
+                break;
+            
+            
+            case '':
+                break;
+            default:
+                term.echo("\nunknown command: " + command + "\n" +
+                          "please type 'help' or '?' for a list of available commands\n");
+        }
+    }, {
+        prompt: '[[;grey;]newuser@terminal-portfolio][[;grey;]:~$]' + " ",
+        greetings: "[[b;white;]Welcome to Mehdi AIT HAMMA portfolio\n\n\nType \u0027help\u0027 for a list of available commands\n]",
+
+        keydown: function(e, term) {
+            if (animation) {
+                if (e.which == 68 && e.ctrlKey) { 
+                    clearTimeout(timer);
+                    animation = false;
+                    term.echo(string + ' [[b;red;]FAIL]')
+                    .set_prompt(prompt);
+                }
+                return false;
+            }
+        },
+        autocompleteMenu: true,
+        completion: Object.keys(commands)
+        
+    });
+});
+</script>
+
+        </body>
+</html>
